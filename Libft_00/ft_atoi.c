@@ -6,16 +6,15 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 15:10:52 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/21 15:35:13 by gpaeng           ###   ########.fr       */
+/*   Updated: 2020/12/21 15:44:25 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 int     ft_isspace(char c)
 {
-    return (c == '\f' || c == '\n' || c == '\r' || c == '\t' || c == '\v');
+    return (c == '\f' || c == '\n' || c == '\r' || c == '\t' || c == '\v' || c == ' ');
 }
 
 int     ft_atoi(const char *nptr)
@@ -24,7 +23,7 @@ int     ft_atoi(const char *nptr)
     int sign;
 
     result = 0;
-    sign = -1;
+    sign = 1;
     while (ft_isspace(*nptr))
         nptr++;
     if (*nptr == '+' || *nptr == '-')
@@ -40,15 +39,15 @@ int     ft_atoi(const char *nptr)
     return (sign * result);
 }
 
-int main()
-{
-    char *a = "     -2147483648";
-    char *b = "   -2";
-    char *c = "-++123";
+// int main()
+// {
+//     char *a = "     -2147483648";
+//     char *b = "   -2";
+//     char *c = "-++123";
 
-    printf("%d\n", ft_atoi(a));
-    printf("%d\n", ft_atoi(b));
-    printf("%d\n", ft_atoi(c));
+//     printf("%d\n", ft_atoi(a));
+//     printf("%d\n", ft_atoi(b));
+//     printf("%d\n", ft_atoi(c));
     
-    return (0);
-}
+//     return (0);
+// }
