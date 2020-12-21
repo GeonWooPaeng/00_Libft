@@ -6,13 +6,13 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 14:46:33 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/21 15:04:03 by gpaeng           ###   ########.fr       */
+/*   Updated: 2020/12/21 19:34:04 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 // #include <stdio.h>
-void ft_bzero(void *s, size_t n)
+void    ft_bzero(void *s, size_t n)
 {
     ft_memset(s, '\0', n);
 }

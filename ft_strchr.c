@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/21 15:06:24 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/21 19:33:41 by gpaeng           ###   ########.fr       */
+/*   Created: 2020/12/21 19:09:59 by gpaeng            #+#    #+#             */
+/*   Updated: 2020/12/21 19:23:23 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t  ft_strlen(const char *s)
+char    *ft_strchr(const char *s, int c)
 {
-    unsigned int i;
-
-    i = 0;
-    while (s[i])
+    while (*s != c)
     {
-        i++;
+        if (*s == '\0')
+            return (0);
+        s++;
     }
-    return (i);
+    return ((char *)s);
 }
+
+// int main(void)
+// {
+//     char *a = "gpaeng abc";
+//     char b = 'h';
+//     char *c = ft_strchr(a, b);
+//     char *d = strchr(a, b);
+//     printf("%s\n",c);
+//     printf("%s\n",d);
+// }
