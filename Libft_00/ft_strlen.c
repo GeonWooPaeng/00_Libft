@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/21 12:54:15 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/21 12:57:15 by gpaeng           ###   ########.fr       */
+/*   Created: 2020/12/21 15:06:24 by gpaeng            #+#    #+#             */
+/*   Updated: 2020/12/21 15:09:11 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H 
+#include "libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
+size_t strlen(const char *s)
+{
+    unsigned int i;
 
-//part 1
-void        *ft_memset(void *dest, int c, size_t n);
-
-#endif
+    i = 0;
+    while (s[i])
+    {
+        i++;
+    }
+    return (i);
+}
