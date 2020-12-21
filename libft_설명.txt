@@ -31,3 +31,14 @@ size_t len : big 문자열 내에서 탐색할 최대 범위
 
 strchr
 - 문자열 s에서 문자 c의 첫 번째 발생에 대한 포인터를 리턴합니다.
+
+memmove 
+https://hand-over.tistory.com/47
+- src 메모리 영역에서 dest 메모리 영역으로 n 바이트를 복사합니다.
+- 메모리 영역은 겹칠 수 있습니다. 복사는 src의 바이트가 src 또는 dest 
+겹치지 않는 임시 배열로 먼저 복사 된 다음 임시 배열에서 dest로 복사되는 것처럼 발생
+
+calloc 
+- 배열을 0으로 채우는 것 
+- nmeb - 배열 요소수
+- size - 각 요소의 byte

@@ -1,34 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/21 19:09:59 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/21 23:34:55 by gpaeng           ###   ########.fr       */
+/*   Created: 2020/12/21 22:49:33 by gpaeng            #+#    #+#             */
+/*   Updated: 2020/12/21 22:52:54 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strchr(const char *s, int c)
+void    *memmove(void *dest, const void *src, size_t n)
 {
-    while (*s != '\0')
-    {
-        if (*s == (unsigned char)c)
-            return ((char *)s);
-        s++;
-    }
-    return (0);
 }
-
-// int main(void)
-// {
-//     char *a = "gpaeng abc";
-//     char b = 'h';
-//     char *c = ft_strchr(a, b);
-//     char *d = strchr(a, b);
-//     printf("%s\n",c);
-//     printf("%s\n",d);
-// }

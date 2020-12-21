@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/21 19:09:59 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/21 23:34:55 by gpaeng           ###   ########.fr       */
+/*   Created: 2020/12/21 22:58:15 by gpaeng            #+#    #+#             */
+/*   Updated: 2020/12/21 23:03:05 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strchr(const char *s, int c)
+void    *ft_calloc(size_t nmemb, size_t size)
 {
-    while (*s != '\0')
-    {
-        if (*s == (unsigned char)c)
-            return ((char *)s);
-        s++;
-    }
-    return (0);
-}
+    void *arr;
 
-// int main(void)
-// {
-//     char *a = "gpaeng abc";
-//     char b = 'h';
-//     char *c = ft_strchr(a, b);
-//     char *d = strchr(a, b);
-//     printf("%s\n",c);
-//     printf("%s\n",d);
-// }
+    if(!(arr = (void *)malloc(nmemb * size)))
+        return (0);
+    ft_bzero(arr, nmemb * size);
+    return (arr);
+}
