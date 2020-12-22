@@ -72,3 +72,6 @@ substr
 strjoin 
 - s1과 s2를 연결한 결과물을 반환 
 - 문자열 , 실패시 NULL 반환 
+
+strtrim
+- set에 포함된 문자들을 s1문자열에서 앞쪽과 뒤쪽에서 제거 후 복사본 반환, 실패시 NULL 
