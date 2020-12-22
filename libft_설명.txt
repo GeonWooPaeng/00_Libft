@@ -60,3 +60,15 @@ strlcat
 
 strrchr
 - 문자열 s에서 문자 c의 마지막 발생에 대한 포인터를 return 한다.
+
+putendl_fd
+- 문자열 s 출력후 newline으로 끝내기
+
+substr
+- 문자열 중 첫번째 인자(start)에서부터 두번째 인자(length)까지의 구간에 해당하는 문자열을 반환한다.
+- start ~ start+length 까지의 문자열 반환
+- start가 양수일 경우, 문자의 길이 보다 작으면 빈문자열이 리턴된다.
+
+strjoin 
+- s1과 s2를 연결한 결과물을 반환 
+- 문자열 , 실패시 NULL 반환 

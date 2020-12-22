@@ -6,37 +6,38 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 15:10:52 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/21 15:44:25 by gpaeng           ###   ########.fr       */
+/*   Updated: 2020/12/22 15:06:07 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int     ft_isspace(char c)
+int	ft_isspace(char c)
 {
-    return (c == '\f' || c == '\n' || c == '\r' || c == '\t' || c == '\v' || c == ' ');
+	return (c == '\f' || c == '\n' || c == '\r' ||
+	c == '\t' || c == '\v' || c == ' ');
 }
 
-int     ft_atoi(const char *nptr)
+int	ft_atoi(const char *nptr)
 {
-    int result;
-    int sign;
+	int result;
+	int sign;
 
-    result = 0;
-    sign = 1;
-    while (ft_isspace(*nptr))
-        nptr++;
+	result = 0;
+	sign = 1;
+	while (ft_isspace(*nptr))
+		nptr++;
     if (*nptr == '+' || *nptr == '-')
-    {
-        if (*nptr++ == '-')
-            sign *= -1;
-    }
+	{
+		if (*nptr++ == '-')
+			sign *= -1;
+	}
     while (ft_isdigit(*nptr))
-    {
-        result = result * 10 + (*nptr - '0');
-        nptr++;
-    }
-    return (sign * result);
+	{
+		result = result * 10 + (*nptr - '0');
+		nptr++;
+	}
+	return (sign * result);
 }
 
 // int main()

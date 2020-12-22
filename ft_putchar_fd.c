@@ -1,36 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/21 19:09:59 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/22 14:51:13 by gpaeng           ###   ########.fr       */
+/*   Created: 2020/12/22 15:11:03 by gpaeng            #+#    #+#             */
+/*   Updated: 2020/12/22 15:11:54 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strchr(const char *s, int c)
+void	ft_putchar_fd(char c, int fd)
 {
-    while (*s != '\0')
-    {
-        if (*s == (unsigned char)c)
-            return ((char *)s);
-        s++;
-    }
-    return (0);
+	write(fd, &c, 1);
 }
-
-// int main(void)
-// {
-//     char dest[] = "gpaeng fighting";
-//     char *f;
-//     char *l;
-
-//     f = ft_strchr(dest, 'i');
-//     l = ft_strrchr(dest, 'i');
-//     printf("f >> %s, l >> %s\n", f, l);
-//     return (0);
-// }

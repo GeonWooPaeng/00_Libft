@@ -1,36 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/21 19:09:59 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/22 14:51:13 by gpaeng           ###   ########.fr       */
+/*   Created: 2020/12/22 15:19:09 by gpaeng            #+#    #+#             */
+/*   Updated: 2020/12/22 15:30:07 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strchr(const char *s, int c)
+void	ft_putnbr_fd(int n, int fd)
 {
-    while (*s != '\0')
-    {
-        if (*s == (unsigned char)c)
-            return ((char *)s);
-        s++;
-    }
-    return (0);
+	if (n == -2147483648)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putchar_fd('8', fd);
+	}
+	else if (n < 0)
+	{
+		n = -n;
+		ft_putchar_fd('-', fd);
+		ft_putnbr_fd(n / 10, fd);
+	}
+	else
+	{
+		if (n > 9)
+			ft_putnbr_fd(n / 10, fd);
+		ft_putchar_fd(n % 10 + '0', fd);
+	}
 }
 
 // int main(void)
 // {
-//     char dest[] = "gpaeng fighting";
-//     char *f;
-//     char *l;
-
-//     f = ft_strchr(dest, 'i');
-//     l = ft_strrchr(dest, 'i');
-//     printf("f >> %s, l >> %s\n", f, l);
-//     return (0);
+// 	ft_putnbr_fd(0, 1);
+// 	ft_putnbr_fd(2147483647, 1);
+// 	ft_putchar_fd('\n',1);
+// 	ft_putnbr_fd(-2147483648, 1);
+// 	ft_putchar_fd('\n',1);
 // }

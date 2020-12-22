@@ -6,13 +6,13 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 22:49:33 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/22 14:08:12 by gpaeng           ###   ########.fr       */
+/*   Updated: 2020/12/22 14:50:17 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_memmove(void *dest, const void *src, size_t n)
+void *ft_memmove(void *dest, const void *src, size_t n)
 {
     unsigned char *dtmp;
     unsigned char *stmp;

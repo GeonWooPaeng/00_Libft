@@ -6,26 +6,26 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 19:32:54 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/21 21:21:49 by gpaeng           ###   ########.fr       */
+/*   Updated: 2020/12/22 16:01:45 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-    unsigned char   *dtmp;
-    unsigned char   *stmp;
+	unsigned char	*dtmp;
+	unsigned char	*stmp;
 
     if (!dest && !src)
-        return (0);
-    dtmp = dest;
-    stmp = (unsigned char *)src;
-    while (n--)
-    {
-        *dtmp++ = *stmp++;
+		return (0);
+	dtmp = dest;
+	stmp = (unsigned char *)src;
+	while (n--)
+	{
+		*dtmp++ = *stmp++;
     }
-    return (dest);
+	return (dest);
 }
 
 // int main(void)
