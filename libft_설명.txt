@@ -57,3 +57,6 @@ strlcpy
 strlcat 
 - src와 dst 모두 NUL로 종료
 - src를 더한 dst의 초기 길이
+
+strrchr
+- 문자열 s에서 문자 c의 마지막 발생에 대한 포인터를 return 한다.

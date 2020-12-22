@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/21 19:09:59 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/22 14:02:48 by gpaeng           ###   ########.fr       */
+/*   Created: 2020/12/22 13:48:43 by gpaeng            #+#    #+#             */
+/*   Updated: 2020/12/22 14:02:50 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strchr(const char *s, int c)
+char    *ft_strrchr(const char *s, int c)
 {
-    while (*s != '\0')
+    size_t  slen;
+    char    *stmp;
+
+    stmp = (char *)s;
+    slen = ft_strlen(s);
+    stmp += (slen - 1);
+    while(*stmp)
     {
-        if (*s == (unsigned char)c)
-            return ((char *)s);
-        s++;
+        if (*stmp == (unsigned char)c)
+            return (stmp);
+        stmp--;
     }
     return (0);
 }
