@@ -6,27 +6,27 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 18:42:48 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/21 19:33:54 by gpaeng           ###   ########.fr       */
+/*   Updated: 2020/12/22 23:16:06 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-    size_t i;
+	size_t i;
 
-    if (*little == '\0')
-        return ((char *)big);
-    i = 1;
-    while (*big && i < len)
-    {
-        if (*big == *little && ft_strncmp(big, little, ft_strlen(little)) == 0)
-            return ((char *)big);
-        big++;
-        i++;
-    }
-    return (0);
+	if (*little == '\0')
+		return ((char *)big);
+	i = 1;
+	while (*big && i < len)
+	{
+		if (*big == *little && ft_strncmp(big, little, ft_strlen(little)) == 0)
+			return ((char *)big);
+		big++;
+		i++;
+	}
+	return (0);
 }
 
 // int main()

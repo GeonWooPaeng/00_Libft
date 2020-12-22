@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 16:19:30 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/22 19:27:17 by gpaeng           ###   ########.fr       */
+/*   Updated: 2020/12/22 22:58:17 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strrev(char *arr)
 
 	larr = ft_strlen(arr);
 	idx = 0;
-	while(idx < larr)
+	while (idx < larr)
 	{
 		larr--;
 		tmp = arr[idx];
@@ -43,7 +43,7 @@ char	*ft_itoa(int n)
 	if (arr == NULL || n == 0)
 		return ((n == 0) ? "0" : 0);
 	if (n == -2147483648)
-		return("-2147483648");
+		return ("-2147483648");
 	if (n < 0)
 	{
 		n = -n;

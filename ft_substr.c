@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 15:34:23 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/22 15:51:27 by gpaeng           ###   ########.fr       */
+/*   Updated: 2020/12/22 23:21:31 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!(arr = (char *)malloc(sizeof(char) * (len + 1))))
 		return (0);
 	idx = 0;
-	while(*sptr && idx < len)
+	while (*sptr && idx < len)
 	{
 		arr[idx] = *sptr++;
 		idx++;

@@ -6,13 +6,13 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 17:13:30 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/22 14:42:53 by gpaeng           ###   ########.fr       */
+/*   Updated: 2020/12/22 22:57:57 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
-    return (c > 31 && c < 127);
+	return (c > 31 && c < 127);
 }

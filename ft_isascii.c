@@ -6,13 +6,13 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 17:06:52 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/22 14:42:19 by gpaeng           ###   ########.fr       */
+/*   Updated: 2020/12/22 22:57:34 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isascii(int c)
+int	ft_isascii(int c)
 {
-    return (c >= 0 && c < 128);
+	return (c >= 0 && c < 128);
 }

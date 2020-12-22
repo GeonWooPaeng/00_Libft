@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 15:10:52 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/22 15:06:07 by gpaeng           ###   ########.fr       */
+/*   Updated: 2020/12/22 22:56:21 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ int	ft_atoi(const char *nptr)
 	sign = 1;
 	while (ft_isspace(*nptr))
 		nptr++;
-    if (*nptr == '+' || *nptr == '-')
+	if (*nptr == '+' || *nptr == '-')
 	{
 		if (*nptr++ == '-')
 			sign *= -1;
 	}
-    while (ft_isdigit(*nptr))
+	while (ft_isdigit(*nptr))
 	{
 		result = result * 10 + (*nptr - '0');
 		nptr++;
