@@ -1,36 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/21 19:09:59 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/22 20:08:33 by gpaeng           ###   ########.fr       */
+/*   Created: 2020/12/22 20:35:11 by gpaeng            #+#    #+#             */
+/*   Updated: 2020/12/22 21:12:27 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-char	*ft_strchr(const char *s, int c)
+#include <stdio.h>
+int		ft_cntword(char *s, char c)
 {
-	while (*s != '\0')
+	int cnt;
+	
+	cnt = 0;
+	while (*s)
 	{
 		if (*s == c)
-        	return ((char *)s);
+			cnt++;
+		while (*s != c)
+			s++;
 		s++;
 	}
-	return (0);
+	return (cnt);
 }
 
-// int main(void)
+// char	**ft_split(char const *s, char c)
 // {
-//     char dest[] = "gpaeng fighting";
-//     char *f;
-//     char *l;
-
-//     f = ft_strchr(dest, 'i');
-//     l = ft_strrchr(dest, 'i');
-//     printf("f >> %s, l >> %s\n", f, l);
-//     return (0);
 // }
+
+
+int main(void)
+{
+	char *a = "gpaengkgpaengkgpaengkk";
+	char c = 'k';
+	printf("%d\n",ft_cntword(a, c));
+}
