@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 12:50:20 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/22 23:01:33 by gpaeng           ###   ########.fr       */
+/*   Updated: 2020/12/23 13:36:57 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memset(void *dest, int c, size_t n)
 {
-	unsigned char *tmp;
+	char *tmp;
 
 	tmp = dest;
 	while (n-- > 0)

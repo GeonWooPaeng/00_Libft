@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 17:18:18 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/22 23:15:29 by gpaeng           ###   ########.fr       */
+/*   Updated: 2020/12/23 13:38:13 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned int i;
+	size_t i;
 
 	i = 0;
 	while (*s1 && *s2 && *s1 == *s2 && i < n)
@@ -32,6 +32,6 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 // {
 //     char *s1 = "  ddd";
 //     char *s2 = "  dddgg";
-//     printf("%d\n",strncmp(s1, s2, 5));
-//     printf("%d\n",ft_strncmp(s1, s2, 5));
+//     printf("%d\n",strncmp(s1, s2, 6));
+//     printf("%d\n",ft_strncmp(s1, s2, 6));
 // }

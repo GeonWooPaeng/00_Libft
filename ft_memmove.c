@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 22:49:33 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/22 23:01:06 by gpaeng           ###   ########.fr       */
+/*   Updated: 2020/12/23 13:36:24 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char *dtmp;
-	unsigned char *stmp;
+	char		*dtmp;
+	const char	*stmp;
 
 	dtmp = dest;
-	stmp = (unsigned char *)src;
+	stmp = src;
 	if (!dest && !src)
 		return (0);
 	if (dest <= src)

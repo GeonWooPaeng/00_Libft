@@ -80,3 +80,24 @@ strtrim
 
 ft_strmapi
 - 문자열의 각 문자들을 함수로 돌리고 남은 문자 
+
+===================================================================
+
+linked list 
+- . 인 경우는 구조체에 그냥 들어가는 것 
+- -> 인 경우는 (*sarr).변수 이며 대부분의 배열에서는 ->을 사용한다.
+
+linked list head
+- dummy linked list를 생각하면 됩니다.
+- 즉 head를 두어 실제 데이터를 지닌 노드가 아닌 구현의 편의를 위해 맨 앞에 두는 노드입니다.
+
+- 메모리 누수 파악 -
+leaks 사용법
+- 맨 밑에다가 while(42); 를 써준 뒤 다른 terminal에서
+- leaks ./a.out을 한다.
+
+valgrind 사용법
+- 그냥 valgrind ./a.out을 한다ㅏ.
+
+ft_lstiter
+- lst를 반복하여 각요소의 content에 함수 f를 적용시킨다.

@@ -1,37 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/22 19:27:58 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/23 13:40:33 by gpaeng           ###   ########.fr       */
+/*   Created: 2020/12/23 12:48:08 by gpaeng            #+#    #+#             */
+/*   Updated: 2020/12/23 14:10:57 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+t_list	*ft_lstnew(void *content)
 {
-	char	*arr;
-	int		slen;
+	t_list	*sarr;
 
-	while (*s1 && ft_strchr(set, *s1))
-		s1++;
-	slen = ft_strlen(s1);
-	if (!(arr = (char *)malloc(sizeof(char) * (slen + 1))))
+	if (!(sarr = malloc(sizeof(t_list))))
 		return (0);
-	while (slen && s1[slen - 1] && ft_strchr(set, s1[slen - 1]))
-		slen--;
-	ft_memcpy(arr, s1, slen);
-	arr[slen] = '\0';
-	return (arr);
+	sarr->content = content;
+	sarr->next = 0;
+	return (sarr);
 }
-
-// int main()
-// {
-// 	char *a = "eedeegpaengeeed";
-// 	char *b = "ed";
-// 	printf("%s", ft_strtrim(a,b));
-// }

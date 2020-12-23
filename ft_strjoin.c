@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 16:02:39 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/22 23:04:47 by gpaeng           ###   ########.fr       */
+/*   Updated: 2020/12/23 13:39:51 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	ls1;
-	size_t	ls2;
+	int		ls1;
+	int		ls2;
 	char	*arr;
 
 	ls1 = ft_strlen(s1);
