@@ -6,13 +6,13 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 16:19:30 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/22 22:58:17 by gpaeng           ###   ########.fr       */
+/*   Updated: 2020/12/23 20:58:35 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrev(char *arr)
+static char	*ft_strrev(char *arr)
 {
 	int		larr;
 	int		idx;

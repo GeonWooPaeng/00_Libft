@@ -6,13 +6,13 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 15:10:52 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/22 22:56:21 by gpaeng           ###   ########.fr       */
+/*   Updated: 2020/12/23 20:58:36 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isspace(char c)
+static int	ft_isspace(char c)
 {
 	return (c == '\f' || c == '\n' || c == '\r' ||
 	c == '\t' || c == '\v' || c == ' ');

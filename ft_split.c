@@ -6,13 +6,13 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 20:35:11 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/22 23:19:37 by gpaeng           ###   ########.fr       */
+/*   Updated: 2020/12/23 20:58:34 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_cntword(char *s, char c)
+static int		ft_cntword(char *s, char c)
 {
 	int cnt;
 
@@ -32,7 +32,7 @@ int		ft_cntword(char *s, char c)
 	return (cnt);
 }
 
-int		ft_wordlen(char *s, char c)
+static int		ft_wordlen(char *s, char c)
 {
 	int	len;
 	int idx;
@@ -47,7 +47,7 @@ int		ft_wordlen(char *s, char c)
 	return (len);
 }
 
-char	*ft_strdup_fd(char *s, char c)
+static char	*ft_strdup_fd(char *s, char c)
 {
 	char	*arr;
 	int		wordlen;

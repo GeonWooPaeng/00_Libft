@@ -6,12 +6,12 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 14:11:35 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/23 16:02:42 by gpaeng           ###   ########.fr       */
+/*   Updated: 2020/12/24 01:01:45 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+
 t_list	*ft_lstlast(t_list *lst)
 {
 	if (!lst)

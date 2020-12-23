@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 17:19:10 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/23 17:20:40 by gpaeng           ###   ########.fr       */
+/*   Updated: 2020/12/24 01:00:44 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,4 +14,19 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
+	t_list *head;
+	t_list *curr;
+
+	head = 0;
+	while (lst)
+	{
+		if (!(curr = ft_lstnew(lst->content)))
+		{
+			ft_lstclear(&head, del);
+			return (0);
+		}
+		ft_lstadd_back(&head, curr);
+		lst = lst->next;
+	}
+	return (head);
 }

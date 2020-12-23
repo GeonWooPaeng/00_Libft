@@ -38,10 +38,24 @@ SRCS_2 = \
 	./ft_putendl_fd.c	\
 	./ft_putnbr_fd.c
 
+SRCS_B = \
+	./ft_lstnew.c		\
+	./ft_lstadd_front.c	\
+	./ft_lstsize.c		\
+	./ft_lstlast.c		\
+	./ft_lstadd_back.c	\
+	./ft_lstdelone.c	\
+	./ft_lstclear.c		\
+	./ft_lstiter.c		\
+	./ft_lstmap.c		\
 
 SRCS = $(SRCS_1) $(SRCS_2)
 
 OBJS = $(SRCS:.c=.o)
+
+SRCS_B = $(SRCS_B)
+
+OBJS_B = $(SRCS_B:.c=.o)
 
 all : $(NAME)
 
@@ -51,12 +65,15 @@ all : $(NAME)
 $(NAME): $(OBJS)
 	ar rs $(NAME) $(OBJS)
 
+bonus : $(OBJS_B)
+	ar rs $(NAME) $(OBJS_B)
+
 clean :
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(OBJS_B)
 
 fclean : clean 
 		rm -f $(NAME)
 
 re : fclean all 
 
-.PHOHY: all clean fclean re
+.PHONY: all clean fclean re

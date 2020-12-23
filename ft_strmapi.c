@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 22:19:07 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/22 23:07:01 by gpaeng           ###   ########.fr       */
+/*   Updated: 2020/12/23 20:30:25 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*arr;
-	int		slen;
-	int		idx;
+	char			*arr;
+	int				slen;
+	unsigned int	idx;
 
 	slen = ft_strlen(s);
 	idx = 0;
