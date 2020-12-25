@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 15:10:52 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/23 20:58:36 by gpaeng           ###   ########.fr       */
+/*   Updated: 2020/12/25 21:37:57 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	ft_isspace(char c)
 	c == '\t' || c == '\v' || c == ' ');
 }
 
-int	ft_atoi(const char *nptr)
+int			ft_atoi(const char *nptr)
 {
 	int result;
 	int sign;
@@ -39,7 +39,6 @@ int	ft_atoi(const char *nptr)
 	}
 	return (sign * result);
 }
-
 // int main()
 // {
 //     char *a = "     -2147483648";

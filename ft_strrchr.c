@@ -6,26 +6,27 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 13:48:43 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/23 13:39:14 by gpaeng           ###   ########.fr       */
+/*   Updated: 2020/12/25 22:53:37 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char *ft_strrchr(const char *s, int c)
 {
-	int		slen;
-	char	*stmp;
+	int			slen;
+	const char *stmp;
 
-	stmp = (char *)s;
+	stmp = s;
 	slen = ft_strlen(s);
-	stmp += (slen - 1);
-	while(*stmp)
+	stmp += slen;
+	while (slen > 0 && *stmp != c)
 	{
-		if (*stmp == c)
-			return (stmp);
 		stmp--;
+		slen--;
 	}
+	if (*stmp == c)
+		return ((char *)stmp);
 	return (0);
 }
 

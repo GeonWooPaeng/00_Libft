@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 15:34:23 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/23 17:24:36 by gpaeng           ###   ########.fr       */
+/*   Updated: 2020/12/25 23:16:59 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	idx;
+	size_t	slen;
 	char	*sptr;
 	char	*arr;
 
 	sptr = (char *)s;
+	slen = ft_strlen(sptr);
 	sptr += start;
-	if (ft_strlen(s) < start)
-		return (ft_strdup(""));
-	if (!(arr = (char *)malloc(sizeof(char) * (len + 1))))
+	if (!s || !(arr = (char *)malloc(sizeof(char) * (len + 1))))
 		return (0);
 	idx = 0;
-	while (*sptr && idx < len)
+	while (*sptr && idx < len && start < slen)
 	{
 		arr[idx] = *sptr++;
 		idx++;
@@ -33,6 +33,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	arr[idx] = '\0';
 	return (arr);
 }
+
 
 // int main(void)
 // {

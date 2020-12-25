@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 17:29:25 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/22 23:20:03 by gpaeng           ###   ########.fr       */
+/*   Updated: 2020/12/25 22:40:54 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,11 @@
 
 char	*ft_strdup(const char *s)
 {
-	char	*arr;
-	int		len;
+	char *arr;
 
-	len = ft_strlen(s);
-	if (!(arr = (char *)malloc(sizeof(char) * (len + 1))))
+	if (!(arr = malloc(sizeof(char) * (ft_strlen(s) + 1))))
 		return (0);
-	len = 0;
-	while (s[len])
-	{
-		arr[len] = s[len];
-		len++;
-	}
-	arr[len] = '\0';
+	ft_memcpy(arr, s, ft_strlen(s) + 1);
 	return (arr);
 }
 
@@ -40,4 +32,36 @@ char	*ft_strdup(const char *s)
 //     printf("%s\n",a);
 //     printf("%s\n",c); 
 //     return (0);
+// }
+// static void     ft_print_result(char const *s)
+// {
+//     int     len;
+
+// 	len = 0;
+//     while (s[len])
+// 		len++;
+//     write(1, s, len);
+// }
+
+// int main(int argc, const char *argv[])
+// {
+//     char    str[] = "lorem ipsum dolor sit amet";
+//     char    *str_dup;
+
+// 	alarm(5);
+//     if (argc == 1)
+// 		return (0);
+// 	printf("%d", atoi(argv[1]));
+//     if (atoi(argv[1]) == 0)
+//     {
+// 		if (!(str_dup = ft_strdup(str)))
+// 			ft_print_result("NULL");
+// 		else
+// 			ft_print_result(str_dup);
+// 		if (str_dup == str)
+// 			ft_print_result("\nstr_dup's adress == str's adress");
+// 		else
+// 			free(str_dup);
+// 	}
+// 	return (0);
 // }

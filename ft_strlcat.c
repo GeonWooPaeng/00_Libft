@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 10:40:40 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/22 23:05:27 by gpaeng           ###   ########.fr       */
+/*   Updated: 2020/12/25 22:45:23 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,15 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	if (size == 0)
 		return (lsrc);
 	idx = 0;
-	while (src[idx] != '\0' && idx < (size - 1 - ldest))
+	if (ldest < size - 1)
 	{
-		dest[ldest + idx] = src[idx];
-		idx++;
+		while (src[idx] != '\0' && idx < (size - 1 - ldest))
+		{
+			dest[ldest + idx] = src[idx];
+			idx++;
+		}
 	}
+	dest[ldest + idx] = '\0';
 	return (ldest + lsrc);
 }
 

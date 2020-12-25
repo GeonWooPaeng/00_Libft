@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 15:06:24 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/23 13:39:49 by gpaeng           ###   ########.fr       */
+/*   Updated: 2020/12/24 21:52:26 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlen(const char *s)
 {
-	int i;
+	unsigned int i;
 
 	i = 0;
 	while (s[i])

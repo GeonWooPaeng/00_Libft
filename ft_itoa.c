@@ -6,60 +6,52 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 16:19:30 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/23 20:58:35 by gpaeng           ###   ########.fr       */
+/*   Updated: 2020/12/25 22:38:28 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-static char	*ft_strrev(char *arr)
+static size_t ft_nlen(int n)
 {
-	int		larr;
-	int		idx;
-	int		tmp;
+	size_t cnt;
 
-	larr = ft_strlen(arr);
-	idx = 0;
-	while (idx < larr)
-	{
-		larr--;
-		tmp = arr[idx];
-		arr[idx] = arr[larr];
-		arr[larr] = tmp;
-		idx++;
-	}
-	return (arr);
-}
-
-char	*ft_itoa(int n)
-{
-	char	*arr;
-	int		sign;
-	int		idx;
-
-	sign = 0;
-	idx = 0;
-	arr = (char *)malloc(sizeof(char) * 12);
-	if (arr == NULL || n == 0)
-		return ((n == 0) ? "0" : 0);
-	if (n == -2147483648)
-		return ("-2147483648");
-	if (n < 0)
-	{
-		n = -n;
-		sign = 1;
-	}
+	cnt = 0;
 	while (n)
 	{
-		arr[idx++] = n % 10 + '0';
 		n /= 10;
+		cnt++;
 	}
-	if (sign)
-		arr[idx++] = '-';
-	arr[idx] = '\0';
-	return (ft_strrev(arr));
+	return (cnt);
 }
 
+char *ft_itoa(int n)
+{
+	char *str;
+	long nbr;
+	size_t nlen;
+	size_t sign;
+
+	nbr = n;
+	nlen = n > 0 ? 0 : 1;
+	nbr = nbr > 0 ? nbr : -nbr;
+	sign = n > 0 ? 1 : 0;
+	nlen += ft_nlen(n);
+	if (!(str = (char *)malloc(sizeof (char) * (nlen + 1))))
+		return (0);
+	*(str + nlen--) = '\0';
+	while (nbr > 0)
+	{
+		*(str + nlen--) = nbr % 10 + '0';
+		nbr /= 10;
+	}
+	if (nlen == 0 && str[1] == '\0')
+		*(str + nlen) = '0';
+	else if (nlen == 0 && sign == 0)
+		*(str + nlen) = '-';
+	return (str);
+}
 // int main(void)
 // {
 // 	char *a = ft_itoa(-2147483647);

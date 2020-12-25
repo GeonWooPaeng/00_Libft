@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 18:42:48 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/22 23:16:06 by gpaeng           ###   ########.fr       */
+/*   Updated: 2020/12/25 22:51:31 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	if (*little == '\0')
 		return ((char *)big);
-	i = 1;
-	while (*big && i < len)
+	i = ft_strlen((char *)little);
+	while (*big && i <= len)
 	{
 		if (*big == *little && ft_strncmp(big, little, ft_strlen(little)) == 0)
 			return ((char *)big);

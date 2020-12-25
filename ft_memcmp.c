@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 23:37:59 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/23 13:33:50 by gpaeng           ###   ########.fr       */
+/*   Updated: 2020/12/25 22:19:19 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		ss2++;
 		i++;
 	}
-	if (i == n + 1)
+	if (i == n)
 		return (0);
 	return (*ss1 - *ss2);
 }

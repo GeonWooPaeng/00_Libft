@@ -4,6 +4,7 @@ NAME = libft.a
 
 SRCS_1 = \
 	./ft_memset.c	\
+	./ft_calloc.c	\
 	./ft_bzero.c	\
 	./ft_memcpy.c	\
 	./ft_memccpy.c	\
@@ -14,6 +15,8 @@ SRCS_1 = \
 	./ft_strlcpy.c	\
 	./ft_strlcat.c	\
 	./ft_strchr.c	\
+	./ft_strrchr.c	\
+	./ft_strdup.c	\
 	./ft_strnstr.c	\
 	./ft_strncmp.c	\
 	./ft_atoi.c		\
@@ -47,33 +50,31 @@ SRCS_B = \
 	./ft_lstdelone.c	\
 	./ft_lstclear.c		\
 	./ft_lstiter.c		\
-	./ft_lstmap.c		\
+	./ft_lstmap.c
 
 SRCS = $(SRCS_1) $(SRCS_2)
 
 OBJS = $(SRCS:.c=.o)
-
-SRCS_B = $(SRCS_B)
 
 OBJS_B = $(SRCS_B:.c=.o)
 
 all : $(NAME)
 
 %.o: %.c 
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@ 
 
-$(NAME): $(OBJS)
+$(NAME) : $(OBJS)
 	ar rs $(NAME) $(OBJS)
 
-bonus : $(OBJS_B)
+bonus: $(OBJS_B)
 	ar rs $(NAME) $(OBJS_B)
 
-clean :
+clean:
 	rm -f $(OBJS) $(OBJS_B)
 
-fclean : clean 
-		rm -f $(NAME)
+fclean: clean 
+	rm -f $(NAME)
 
 re : fclean all 
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re 

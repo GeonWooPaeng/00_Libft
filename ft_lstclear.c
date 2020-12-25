@@ -6,25 +6,26 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 16:15:14 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/23 17:13:28 by gpaeng           ###   ########.fr       */
+/*   Updated: 2020/12/25 21:59:47 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	int	llst;
+	t_list *nlst;
 
-	llst = ft_lstsize(*lst);
-	while (llst--)
+	if (!*lst)
+		return ;
+	while (*lst)
 	{
-		del(lst[llst]->content);
-		free(lst[llst]);
+		nlst = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = nlst;
 	}
 	*lst = 0;
 }
-
 // void	ft_del(void *lst)
 // {
 // 	t_list *tmp;
