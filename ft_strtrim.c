@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 19:27:58 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/25 23:17:24 by gpaeng           ###   ########.fr       */
+/*   Updated: 2020/12/25 23:20:19 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (arr);
 }
 
-int main()
-{
-	char *a = "abcdefgabcdef";
-	char *b = "acd";
-	printf("%s", ft_strtrim(a,b));
-}
+// int main()
+// {
+// 	char *a = "abcdefgabcdef";
+// 	char *b = "acd";
+// 	printf("%s", ft_strtrim(a,b));
+// }

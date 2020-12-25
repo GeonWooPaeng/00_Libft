@@ -6,12 +6,12 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 15:34:23 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/25 23:16:59 by gpaeng           ###   ########.fr       */
+/*   Updated: 2020/12/25 23:21:04 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+#include <stdio.h>
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	idx;
