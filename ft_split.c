@@ -6,14 +6,24 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 20:35:11 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/25 22:39:26 by gpaeng           ###   ########.fr       */
+/*   Updated: 2020/12/26 16:35:51 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-static size_t	ft_cntword(char *s, char c)
+static size_t	ft_lenword(char const *s, char c)
+{
+	size_t lenword;
+
+	lenword = 0;
+	while (*s && *s++ != c)
+		lenword++;
+	return (lenword);
+}
+
+static size_t	ft_cntword(char const *s, char c)
 {
 	size_t cnt;
 
@@ -25,66 +35,60 @@ static size_t	ft_cntword(char *s, char c)
 		if (*s && *s != c)
 		{
 			cnt++;
-			while (*s && *s != c)
+			while (*s && *s == c)
 				s++;
 		}
-		s++;
+		while (*s && *s != c)
+			s++;
 	}
 	return (cnt);
 }
 
-static size_t ft_wordlen(char *s, char c)
+static char		*ft_fd_strdup(const char *s, size_t lenword)
 {
-	size_t len;
-	size_t idx;
+	char	*arr;
 
-	len = 0;
-	idx = 0;
-	while (s[idx] && s[idx] != c)
-	{
-		len++;
-		idx++;
-	}
-	return (len);
-}
-
-static char *ft_strdup_fd(char *s, char c)
-{
-	char *arr;
-	size_t wordlen;
-
-	wordlen = ft_wordlen(s, c);
-	if (!(arr = (char *)malloc(sizeof(char) * (wordlen))))
+	if (!(arr = (char *)malloc(sizeof(char) * (lenword + 1))))
 		return (0);
-	ft_memcpy(arr, s, wordlen);
+	ft_memcpy(arr, s, lenword);
 	return (arr);
 }
 
-char **ft_split(char const *s, char c)
+static void		ft_free(char **s, int idx)
 {
-	char **arr;
-	char *ptr;
-	size_t aidx;
-	
-	ptr = (char *)s;
-	if (!(arr = (char **)malloc(sizeof(char *) * (ft_cntword(ptr, c) + 1))))
+	while (idx--)
+		free(s[idx]);
+	free(s);
+}
+
+char			**ft_split(char const *s, char c)
+{
+	char	**arr;
+	size_t	cntword;
+	size_t	lenword;
+	size_t	aidx;
+
+	cntword = ft_cntword(s, c);
+	if (!(arr = (char **)malloc(sizeof(char *) * (cntword + 1))))
 		return (0);
 	aidx = 0;
-	while (*ptr)
+	while (aidx < cntword)
 	{
-		while (*ptr && *ptr == c)
-			ptr++;
-		if (*ptr && *ptr != c)
+		while (*s && *s == c)
+			s++;
+		lenword = ft_lenword(s, c);
+		if (!(arr[aidx] = ft_fd_strdup(s, lenword)))
 		{
-			arr[aidx] = ft_strdup_fd(ptr, c);
-			aidx++;
-			while (*ptr && *ptr != c)
-				ptr++;
+			ft_free(arr, aidx - 1);
+			return (0);
 		}
+		aidx++;
+		s += lenword;
 	}
-	arr[aidx] = 0;
+	arr[cntword] = 0;
 	return (arr);
 }
+
 
 // int main(void)
 // {

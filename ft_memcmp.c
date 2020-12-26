@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 23:37:59 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/25 22:19:19 by gpaeng           ###   ########.fr       */
+/*   Updated: 2020/12/26 13:09:33 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	ss1 = s1;
 	ss2 = s2;
 	i = 0;
-	while (i < n && *ss1 && *ss2 && *ss1 == *ss2)
+	while (i < n && *ss1 == *ss2)
 	{
 		ss1++;
 		ss2++;

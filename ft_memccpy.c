@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 20:32:35 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/25 22:16:08 by gpaeng           ###   ########.fr       */
+/*   Updated: 2020/12/26 13:09:52 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 	while (n--)
 	{
 		*dtmp++ = *stmp;
-		if (*stmp == c)
+		if (*stmp == (unsigned char)c)
 			return (dtmp);
 		stmp++;
 	}
