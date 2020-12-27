@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 20:35:11 by gpaeng            #+#    #+#             */
-/*   Updated: 2020/12/27 15:52:20 by gpaeng           ###   ########.fr       */
+/*   Updated: 2020/12/27 15:55:50 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ static char		*ft_fd_strdup(const char *s, size_t lenword)
 	if (!(arr = (char *)malloc(sizeof(char) * (lenword + 1))))
 		return (0);
 	ft_memcpy(arr, s, lenword);
+	arr[lenword] = '\0';
 	return (arr);
 }
 
